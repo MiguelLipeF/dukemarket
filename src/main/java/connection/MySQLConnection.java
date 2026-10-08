@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class MySQLConnection {
 
     private static final String DRIVER = "com.mysql.cj.jdcb.Driver";
-    private static final String URL = "jdbc:mysql://172.16.0.30:3306/miguel_dokemarket";
+    private static final String URL = "jdbc:mysql://172.16.0.30:3306/miguel_dukemarket";
 
     private static final String USER = "miguel";
     private static final String PASS = "2diSenai";
