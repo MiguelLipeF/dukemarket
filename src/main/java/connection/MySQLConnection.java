@@ -18,9 +18,8 @@ import java.util.logging.Logger;
  */
 public class MySQLConnection {
 
-    private static final String DRIVER = "com.mysql.cj.jdcb.Driver";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://172.16.0.30:3306/miguel_dukemarket";
-
     private static final String USER = "miguel";
     private static final String PASS = "2diSenai";
 
@@ -47,8 +46,8 @@ public class MySQLConnection {
     }
 
     public static void closeConnection(Connection conn, PreparedStatement stmt) {
-        
-            closeConnection(conn);
+
+        closeConnection(conn);
 
         try {
             if (stmt != null) {
@@ -61,9 +60,9 @@ public class MySQLConnection {
     }
 
     public static void closeConection(Connection conn,
-                                      PreparedStatement stmt,
-                                      ResultSet rs) {
-                                      closeConnection(conn, stmt);
+            PreparedStatement stmt,
+            ResultSet rs) {
+        closeConnection(conn, stmt);
 
         try {
             if (rs != null) {
@@ -75,5 +74,3 @@ public class MySQLConnection {
         }
     }
 }
-
-
