@@ -45,19 +45,19 @@ public class Dukemarket {
 
         pDAO.create(pAux);
 */
-/*
+
         // Deletar o produto na DB pelo ID
         pDAO.delete(1);
         pDAO.delete(2);
         pDAO.delete(4);
         pDAO.delete(5);
         pDAO.delete(6);
-*/
+
 
         pAux = pDAO.getResultById(7);
         pAux.setQtd(100);
         pDAO.update(pAux);
-
+        
         //Listar a DB
         pDAO.getResults().forEach(p -> {
             System.out.println(p.toString());
