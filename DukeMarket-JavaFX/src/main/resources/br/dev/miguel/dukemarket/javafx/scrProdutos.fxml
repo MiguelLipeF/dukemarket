@@ -18,8 +18,8 @@
                   <TableColumn fx:id="tcoCodBarras" prefWidth="75.0" text="Cod.Barras" />
                   <TableColumn fx:id="tcoDescricao" prefWidth="217.0" text="Descrição" />
                   <TableColumn fx:id="tcoQtd" prefWidth="102.0" text="Qtd." />
-                  <TableColumn fx:id="tcoValorCompra" prefWidth="75.0" text="\$ Compra" />
-                  <TableColumn fx:id="tcoValorVenda" prefWidth="81.0" text="\$ Venda" />
+                  <TableColumn fx:id="tcoValorCompra" prefWidth="78.0" text="\$ Compra" />
+                  <TableColumn fx:id="tcoValorVenda" prefWidth="78.0" text="\$ Venda" />
                   <TableColumn fx:id="tcoDataCadastro" prefWidth="223.0" text="Data Cadastro" />
                </columns>
             </TableView>

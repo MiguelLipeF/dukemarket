@@ -28,13 +28,37 @@ public class MenuPrincipalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
     public void btnProdutosClick() throws IOException {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("scrProdutos.fxml"));
+            /*
+             * if "fx:controller" is not set in fxml
+             * fxmlLoader.setController(NewWindowController);
+             */
+            Scene scene = new Scene(fxmlLoader.load(), 870, 600);
+            Stage stage = new Stage();
+
+            stage.setTitle("CRUD Produtos");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            Logger logger = Logger.getLogger(getClass().getName());
+            logger.log(Level.SEVERE, "Failed to create new Window scrProdutos.", e);
+
+        }
+
+    }
+
+    public void btnClientesClick() throws IOException {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("scrClientes.fxml"));
             /*
              * if "fx:controller" is not set in fxml
              * fxmlLoader.setController(NewWindowController);

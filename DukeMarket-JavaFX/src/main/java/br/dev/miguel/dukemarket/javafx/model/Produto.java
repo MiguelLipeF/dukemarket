@@ -106,7 +106,8 @@ public class Produto {
 
     @Override
     public String toString() {
-        return String.format("%3d | %15s | %-30s | %10.2f | %10.2f | %10s",
+        
+return String.format("%3d | %15s | %-30s | %10.2f | %10.2f | %10s",
                 this.id,
                 this.codBarras,
                 this.descricao,
@@ -115,5 +116,4 @@ public class Produto {
                 this.valorVenda,
                 this.getDataCadastro());
     }
-
 }
