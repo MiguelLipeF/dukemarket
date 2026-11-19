@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.dev.miguel.dukemarket.javafx.controller.ScrCaixaController">
+   <top>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="8.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </top>
+
+   <center>
+      <HBox spacing="20.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="5.0" />
+         </padding>
+         <children>
+            <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label maxWidth="Infinity" text="Seus itens" textFill="#222222" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblClienteStatus" text="CPF: Não informado" textFill="#555555">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+
+                  <TableView fx:id="tblCarrinho" style="-fx-background-color: white; -fx-border-color: #dcdcdc;" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="tcoProduto" prefWidth="230.0" text="PRODUTO" />
+                      <TableColumn fx:id="tcoQtd" prefWidth="75.0" text="QTD" />
+                      <TableColumn fx:id="tcoUnitario" prefWidth="85.0" text="VLR UNIT" />
+                      <TableColumn fx:id="tcoSubtotal" prefWidth="95.0" text="VLR TOTAL" />
+                    </columns>
+                  </TableView>
+
+                  <HBox alignment="CENTER_LEFT" style="-fx-padding: 6 5 0 5;">
+                     <children>
+                        <Label maxWidth="Infinity" text="Total:" textFill="#222222" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotalEsquerda" text="R$   0,00" textFill="#222222">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefWidth="470.0" spacing="10.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="155.0" spacing="6.0" style="-fx-background-color: white; -fx-border-color: #dcdcdc; -fx-border-radius: 3;">
+                     <padding>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="lblDestaqueNome" text="AGUARDANDO LEITURA..." textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblDestaqueInfo" text="Aproxime o código de barras do leitor" textFill="#666666">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+
+                  <Label text="Código de barras:" textFill="#333333">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCodBarras" onAction="#txtCodBarrasAction" prefHeight="38.0" style="-fx-background-color: #e6e6e6; -fx-border-color: #cccccc;">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TextField>
+
+                  <Label text="Produto:" textFill="#333333">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtProdutoAtual" editable="false" focusTraversable="false" prefHeight="38.0" style="-fx-background-color: #e6e6e6; -fx-border-color: #cccccc;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+
+                  <Label text="Preço:" textFill="#333333">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPrecoAtual" editable="false" focusTraversable="false" prefHeight="38.0" style="-fx-background-color: #e6e6e6; -fx-border-color: #cccccc;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+
+                  <HBox alignment="CENTER_RIGHT" style="-fx-padding: 12 5 0 5;">
+                     <children>
+                        <Label fx:id="lblTotalDireita" text="R$   0,00" textFill="#222222">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+
+   <bottom>
+      <GridPane hgap="12.0" prefHeight="95.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnCancelarClick" text="CANCELAR&#10;VENDA" textAlignment="CENTER" GridPane.columnIndex="0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+
+            <Button maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnCatalogoClick" text="PRODUTOS&#10;SEM CÓDIGO" textAlignment="CENTER" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+
+            <Button maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnDigitarCodigoClick" text="DIGITAR CÓDIGO&#10;DE BARRAS" textAlignment="CENTER" GridPane.columnIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+
+            <Button maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnInformarCpfClick" text="INFORMAR CPF" textAlignment="CENTER" GridPane.columnIndex="3">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+
+            <Button maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnFinalizarClick" text="FINALIZAR&#10;COMPRA" textAlignment="CENTER" GridPane.columnIndex="4">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>

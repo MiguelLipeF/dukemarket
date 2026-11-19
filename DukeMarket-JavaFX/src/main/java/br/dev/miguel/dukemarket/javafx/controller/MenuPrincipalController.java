@@ -66,7 +66,7 @@ public class MenuPrincipalController implements Initializable {
             Scene scene = new Scene(fxmlLoader.load(), 870, 600);
             Stage stage = new Stage();
 
-            stage.setTitle("CRUD Produtos");
+            stage.setTitle("CRUD Clientes");
             stage.setScene(scene);
             stage.show();
 
@@ -76,5 +76,23 @@ public class MenuPrincipalController implements Initializable {
 
         }
 
+    }
+    
+    public void btnCaixaClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("scrCaixa.fxml"));
+
+            Scene scene = new Scene(fxmlLoader.load(), 1150, 720);
+            Stage stage = new Stage();
+
+            stage.setTitle("Caixa Touch - DukeMarket");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            Logger logger = Logger.getLogger(getClass().getName());
+            logger.log(Level.SEVERE, "Failed to create new Window scrCaixaTouch.", e);
+        }
     }
 }
